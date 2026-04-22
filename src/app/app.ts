@@ -21,6 +21,17 @@ export class App {
     {description: "go for a walk", done: true},
   ];
 
+  addItem(description: string){
+    if(!description) return;
+
+    /*unshift adder item til begyndelsen af array(toppen) - alternativt ville push() lægge den sidst på listen */
+    this.allItems.unshift({
+      description,
+      done: false,
+    });
+  }
+
+
   get items(){
     if(this.filter === "all"){
       return this.allItems;
